@@ -14,7 +14,7 @@ describe("Validation records", () => {
     const user = new User({ name: "Al" });
     const validationResult = user.validateSync();
     const { message } = validationResult.errors.name;
-    assert(message === "Name must be longer than 2 characters.");
+    assert(message === "Name must be longet than 2 characters.");
   });
 
   it("disallows invalid records from beign saved", (done) => {
