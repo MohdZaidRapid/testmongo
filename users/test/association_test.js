@@ -24,13 +24,12 @@ describe("Assocations", () => {
     );
   });
 
-  it.only("saves a relation between a user and a blogpost", (done) => {
+  it("saves a relation between a user and a blogpost", (done) => {
     User.findOne({ name: "Joe" })
       .populate("blogPosts")
       .then()
       .then((user) => {
         assert(user.blogPosts[0].title === "JS is Great");
-        console.log(user.blogPosts[0].title === "JS is Great");
         done();
       });
   });
